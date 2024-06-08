@@ -1,6 +1,6 @@
 <template>
     <form :action="formAction" method="POST" enctype="multipart/form-data" class="max-w-xl mx-auto p-4 bg-white shadow-md rounded-md" @submit.prevent="submit">
-      <h1 class="text-xl font-semibold mb-4">{{ props.formtype === 'create' ? 'Tambah Pengumuman Baru' : 'Edit Pengumuman' }}</h1>
+      <h1 class="text-xl font-semibold mb-4">{{ props.formtype === 'create' ? 'Tambah Event Baru' : 'Edit Event' }}</h1>
       
       <div class="mb-4">
         <label for="nama_event" class="block text-sm font-medium text-gray-700">Nama Event</label>

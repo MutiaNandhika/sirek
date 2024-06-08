@@ -16,8 +16,6 @@ class PendaftarController extends Controller
         ]);
     }
     
-    
-    
 
     public function create()
     {
@@ -31,7 +29,11 @@ class PendaftarController extends Controller
         'pendaftar' => $pendaftar,
     ]);
 }
-    
+public function edit($id){
+    $event = Pendaftar::findOrFail($id);
+    $formtype = 'edit';
+    return Inertia::render('PendaftarForm', ['event' => $event, 'formtype' => $formtype]);
+}
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -49,8 +51,9 @@ class PendaftarController extends Controller
             'alasan1' => 'required|string',
             'pilihan2' => 'required|string|max:100',
             'alasan2' => 'required|string',
-            'filecv' => 'nullable|string|max:100', // Nullable for updates
-            'fileloc' => 'nullable|string|max:100', // Nullable for updates
+            'filecv' => 'required|string|max:100', // Nullable for updates
+            'fileloc' => 'required|string|max:100', // Nullable for updates
+            'event_id'=>'required|string|max:100', // Nullable for updates
         ]);
 
         $pendaftar = Pendaftar::findOrFail($id);
@@ -81,6 +84,7 @@ class PendaftarController extends Controller
             'alasan2' => 'required|string',
             'filecv' => 'required|string|max:100',
             'fileloc' => 'required|string|max:100',
+            'event_id' => 'required|string|max:100',
         ]);
 
         Pendaftar::create($validatedData);
