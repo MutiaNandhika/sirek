@@ -33,7 +33,7 @@
         <option value="Laki-laki">Laki-laki</option>
         <option value="Perempuan">Perempuan</option>
       </select>
-      <input type="hidden" name="event_id" >
+      <input type="hidden" name="event_id">
     </div>
     <!-- Tambahkan input sesuai dengan field yang dibutuhkan -->
     <div class="flex">
@@ -47,12 +47,18 @@
 import { reactive } from 'vue'
 import { defineProps } from 'vue'
 import { router } from '@inertiajs/vue3'
+import { onMounted } from 'vue'
+
+
 
 const props = defineProps({
   formtype: String,
-  pendaftar: Object
+  pendaftar: Object,
+  event_id: String,
 })
-
+onMounted(() => {
+  console.log(props.event_id)
+});
 const form = reactive({
   nama: '',
   email: '',
