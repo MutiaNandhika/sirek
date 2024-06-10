@@ -62,7 +62,7 @@ Route::get('/delevent/{id}', [EventController::class, 'delete'])->name('event.de
 Route::get('/pendaftar', [PendaftarController::class, 'index'])
     ->name('pendaftar.index')
     ->middleware('auth');
-Route::post('/pendaftar', [PendaftarController::class, 'store'])->name('pendaftar.store')->middleware('auth');
+Route::post('/pendaftar', [PendaftarController::class, 'store'])->name('pendaftar.store');;
 Route::get('/pendaftar/create/{event_id}', [PendaftarController::class, 'create'])->name('pendaftar.create');
 Route::get('/pendaftar/edit/{id}', [PendaftarController::class, 'edit'])->name('pendaftar.edit')->middleware('auth');
 Route::put('/editpendaftar/{id}', [PendaftarController::class, 'update'])->name('pendaftar.update')->middleware('auth');
