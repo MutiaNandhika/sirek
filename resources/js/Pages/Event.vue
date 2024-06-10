@@ -32,7 +32,7 @@ console.log(props.event);  // Log the props to verify data
                                     <td class="px-6 py-4 text-sm text-gray-500">{{ item.nama_event }}</td>
                                     <td class="px-6 py-4 text-sm text-gray-500">{{ item.deskripsi }}</td>
                                     <td class="px-6 py-4 text-sm text-gray-500 square-column">
-    <img :src="'/storage/' + item.gambar" alt="Image Description" class="w-full h-full object-cover rounded-md shadow-md">
+    <img :src="'storage/' + item.gambar" alt="Image Description" class="w-full h-full object-cover rounded-md shadow-md">
 </td>
 
 
