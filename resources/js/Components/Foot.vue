@@ -18,7 +18,7 @@
             <div class="text-sm">
                 <h3 class="font-bold mb-2">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-white text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-linkedin"></i></a>
                     <a href="#" class="text-white text-2xl"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="text-white text-2xl"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="text-white text-2xl"><i class="fab fa-youtube"></i></a>
