@@ -187,17 +187,18 @@ function submit() {
   formData.append('filecv', form.filecv)
   formData.append('fileloc', form.fileloc)
   formData.append('event_id', form.event_id)
-  if (props.formtype === 'edit' && form.filecv ===null && form.fileloc ===null) {
-    formData.append('_method', 'PUT')
-    router.post(formAction, formData)
-  } else {
-    formData.append('filecv', form.filecv)
-    formData.append('filecv', form.fileloc)
-      if(props.formtype === 'edit'){
-        formData.append('_method', 'PUT')
-      }
-      router.post(formAction, formData)
+  if (props.formtype === 'edit' && (form.filecv === null || form.fileloc === null)) {
+    formData.append('_method', 'PUT');
+    router.put(formAction, formData); // Use router.put for the PUT method
+} else {
+    formData.append('filecv', form.filecv);
+    formData.append('fileloc', form.fileloc); // Append both filecv and fileloc
+    if (props.formtype === 'edit') {
+        formData.append('_method', 'PUT');
     }
+    router.post(formAction, formData); // Use router.post for the POST method
+}
+
   }
 
 
