@@ -21,10 +21,10 @@ defineProps({
               class="font-semibold text-white hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
             Dashboard
         </Link>
-        <Link v-else :href="route('login')"
-              class="font-semibold text-white hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-            Log in
-        </Link>
+
+        <div class="flex-shrink-0">
+            <a href="/login" class="bg-white text-blue-700 py-2 px-4 rounded-full shadow hover:bg-gray-100">Masuk</a>
+        </div>
     </div>
 
     <!-- Konten Utama -->
@@ -51,7 +51,7 @@ defineProps({
         </div>
     </div>
 
-    <!-- Section: Kenapa Harus SMK Negeri Makassar -->
+    <!-- Section: 1 -->
     <section class="bg-white py-12">
         <div class="container mx-auto p-6">
         <h1 class="text-3xl font-bold text-center mb-6">Filosofi Logo</h1>
@@ -99,7 +99,7 @@ defineProps({
     </div>
     </section>
     
-    <!-- Section: Jurusan -->
+    <!-- Section: 2-->
     <section class="bg-white">
             <div class="container mx-auto text-center">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">BOOKLET</h2>
