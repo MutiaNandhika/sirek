@@ -63,7 +63,7 @@ export default {
   methods: {
     getAnnouncementText(eventId) {
       const announcement = this.pengumuman.find(p => p.event.event_id === eventId);
-      return announcement ? announcement.keterangan : 'Pengumuman belum tersedia';
+      return  announcement.keterangan;
     },
     getAnnouncementId(eventId) {
       const announcement = this.pengumuman.find(p => p.event.event_id === eventId);
