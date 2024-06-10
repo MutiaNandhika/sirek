@@ -1,5 +1,5 @@
 <template>
-  <form :action="formAction" method="POST" enctype="multipart/form-data" class="max-w-xl mx-auto p-4 bg-white shadow-md rounded-md" @submit.prevent="submit">
+  <form :action="formAction" :method="props.formtype === 'edit' ? 'PUT' : 'POST'" enctype="multipart/form-data" class="max-w-xl mx-auto p-4 bg-white shadow-md rounded-md" @submit.prevent="submit">
     <h1 class="text-xl font-semibold mb-4">Pendaftaran untuk <span class="text-blue-800">{{ event.nama_event }}</span></h1>
     
     <!-- Nama -->
@@ -194,7 +194,8 @@ function submit() {
     formData.append('fileloc', form.fileloc)
   }
 
-  // Determine the HTTP method based on the form type
+  console.log("Form Data:", formData); // Add this line to check form data
+
   let method = 'POST'
   if (props.formtype === 'edit') {
     method = 'PUT'
@@ -203,7 +204,16 @@ function submit() {
 
   // Submit the form using appropriate router method
   router[method.toLowerCase()](formAction, formData)
+    .then(response => {
+      console.log('Form submitted successfully:', response)
+      // Handle successful form submission
+    })
+    .catch(error => {
+      console.error('Error submitting form:', error)
+      // Handle form submission error
+    })
 }
+
 
 
 
