@@ -14,7 +14,6 @@ defineProps({
     
     <!-- Guest Navbar -->
     <GuestNavbar :canLogin="canLogin" :canRegister="canRegister" />
-   
 
     <!-- Login/Logout Links -->
     <div v-if="canLogin" class="sm:absolute sm:top-0 sm:end-0 p-6 text-end z-10">
@@ -26,40 +25,6 @@ defineProps({
               class="font-semibold text-white hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
             Log in
         </Link>
-    </div>
-
-    <!-- Konten Utama -->
-    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-gray-100 selection:bg-red-500 selection:text-white">
-        <div class="text-center p-6 sm:p-12">
-            <h1 class="text-4xl font-bold text-gray-800">SMK <span class="text-blue-500">Negeri</span> Makassar</h1>
-            <p class="mt-4 text-gray-600">sekolah adalah tempat mencetak penerus bangsa yang berkualitas dan berprestasi di segala bidang yang dapat bersaing di dunia internasional</p>
-            <div class="mt-6 flex justify-center space-x-4">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Mulai</button>
-                <button class="border border-blue-500 text-blue-500 px-4 py-2 rounded-lg">Video</button>
-            </div>
-            <div class="mt-6 relative">
-                <img src="storage/assets/logo1.png" alt="Gambar Sekolah" class="rounded-lg shadow-lg">
-                <div class="absolute top-2 left-2 bg-white p-2 rounded-lg shadow-lg">
-                    <p class="text-sm">"Belajar itu Menyenangkan Kuncinya Jangan Pernah Menyerah Oleh Apapun Itu"</p>
-                </div>
-                <div class="absolute top-2 right-2 bg-white p-2 rounded-lg shadow-lg flex items-center space-x-2">
-                    <img src="storage/assets/logo1.png" alt="Pengguna" class="w-6 h-6 rounded-full">
-                    <div>
-                        <p class="text-sm font-bold">Risnawati</p>
-                        <p class="text-xs">Siswa Berprestasi</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-6">
-                <p class="text-gray-600">Kami ada di Media Sosial:</p>
-                <div class="flex justify-center space-x-4 mt-2">
-                    <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Section: Kenapa Harus SMK Negeri Makassar -->
