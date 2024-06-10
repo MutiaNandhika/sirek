@@ -18,10 +18,10 @@
             <div class="text-sm">
                 <h3 class="font-bold mb-2">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-white text-2xl"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="text-white text-2xl"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white text-2xl"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white text-2xl"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@bem_unsoed?_t=8n4sr1LYlWr&_r=1" class="text-white text-2xl"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://x.com/BEM_Unsoed" class="text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/bem_unsoed?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@BEMUnsoed" class="text-white text-2xl"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
