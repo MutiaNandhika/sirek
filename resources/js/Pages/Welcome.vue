@@ -27,96 +27,99 @@ defineProps({
         </Link>
     </div>
 
+    <!-- Konten Utama -->
+     <!-- Header Section -->
+     <header class="bg-blue-700 text-white py-12">
+            <div class="container mx-auto text-center">
+                <h1 class="text-5xl font-bold mb-4">BEM UNSOED 2024</h1>
+            </div>
+        </header>
+    <div class="relative sm:flex sm:justify-center bg-gray-100 selection:bg-red-500 selection:text-white">
+        <div class="relative bg-gray-100 selection:bg-red-500 selection:text-white">
+        <div class="text-center p-6 sm:p-12">
+            <!-- Hero Section -->
+            <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-9 flex items-center">
+                <img src="storage/assets/nobg1.png" alt="Gambar Logo" class="w-40 h-40 mr-6">
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-800">Kabinet Bahtera Karsa</h1>
+                    <p class="mt-4 text-gray-600">
+                        BEM Unsoed 2024 mengusung nama kabinet “Bahtera Karsa” dengan arti kapal/wadah yang besar di dalamnya terdapat orang-orang yang memiliki karsa/tekad yang sama. Bersama nama dan logo ini terdapat doa serta harapan yang mengiringi setiap perjalanan BEM Unsoed di tahun 2024. Dengan ini, perjalanan BEM Unsoed 2024 kita awali bersama. Sudah saatnya kita untuk saling berkolaborasi bersama untuk terus menciptakan ragam karya untuk Unsoed dan Negeri kita tercinta. Ciptakan bahtera, Satukan karsa, Melangkah bersama!
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <!-- Section: Kenapa Harus SMK Negeri Makassar -->
     <section class="bg-white py-12">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Kenapa Harus SMK Negeri Makassar?</h2>
-            <p class="text-gray-600 mb-12">Alasan kenapa harus memilih untuk bergabung dengan SMK Telkom Makassar.</p>
-            <div class="flex flex-wrap justify-center">
-                <div class="w-full md:w-1/4 p-4">
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        <i class="fas fa-laptop-code text-4xl text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Fasilitas Lengkap</h3>
-                        <p class="text-gray-600">Deskripsi singkat tentang fasilitas lengkap yang disediakan.</p>
-                    </div>
+        <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-6">Filosofi Logo</h1>
+        <div class="space-y-6">
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
+                <img src="storage/assets/f1.png" alt="Api" class="w-16 h-16 mr-4">
+                <div>
+                    <h2 class="text-xl font-bold">Api</h2>
+                    <p>Melambangkan kekuatan tekad juang, yang senantiasa memberikan kehangatan serta cahaya dalam setiap langkah perjuangan, dan menjadi sumber inspirasi sekitarnya</p>
                 </div>
-                <div class="w-full md:w-1/4 p-4">
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        <i class="fas fa-tree text-4xl text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Lingkungan Nyaman</h3>
-                        <p class="text-gray-600">Deskripsi singkat tentang lingkungan yang nyaman untuk belajar.</p>
-                    </div>
+            </div>
+            
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
+                <img src="storage/assets/f2.png" alt="Bahtera" class="w-16 h-16 mr-4">
+                <div>
+                    <h2 class="text-xl font-bold">Bahtera</h2>
+                    <p>Sebagai kapal besar yang akan melakukan perjalanan luas, diciptakan untuk mempersatukan dan mengokohkan rasa, membangun fondasi yang kuat untuk berlabuh bersama</p>
                 </div>
-                <div class="w-full md:w-1/4 p-4">
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        <i class="fas fa-user-friends text-4xl text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Guru Profesional</h3>
-                        <p class="text-gray-600">Deskripsi singkat tentang guru profesional yang mengajar.</p>
-                    </div>
+            </div>
+            
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
+                <img src="storage/assets/f3.png" alt="Tiga Percikan Air" class="w-16 h-16 mr-4">
+                <div>
+                    <h2 class="text-xl font-bold">Tiga Percikan Air</h2>
+                    <p>Melambangkan tri dharma perguruan tinggi sebagai landasan</p>
                 </div>
-                <div class="w-full md:w-1/4 p-4">
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        <i class="fas fa-chalkboard-teacher text-4xl text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kurikulum Berbasis Industri</h3>
-                        <p class="text-gray-600">Deskripsi singkat tentang kurikulum berbasis industri.</p>
-                    </div>
+            </div>
+            
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
+                <img src="storage/assets/f4.png" alt="Tangan yang mengadah" class="w-16 h-16 mr-4">
+                <div>
+                    <h2 class="text-xl font-bold">Tangan yang mengadah</h2>
+                    <p>Melambangkan keterbukaan dan semangat yang mendorong bahtera karsa</p>
+                </div>
+            </div>
+            
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
+                <img src="storage/assets/f5.png" alt="Gelombang" class="w-16 h-16 mr-4">
+                <div>
+                    <h2 class="text-xl font-bold">Gelombang</h2>
+                    <p>Menggambarkan pergerakan yang dinamis serta keberanian yang tulus dalam menghadapi beragam tantangan, terus melangkah bersama karsa guna mencapai tujuan bersama</p>
                 </div>
             </div>
         </div>
+    </div>
     </section>
-
-    <!-- Section: Profil SMK Negeri -->
-    <section class="bg-gray-100 py-12">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold text-blue-500 mb-4">Profil SMK Negeri Makassar</h2>
-            <p class="text-gray-600 mb-8">Sambutan Kepala Sekolah SMK Negeri Makassar</p>
-            <div class="flex justify-center">
-                <div class="w-full md:w-1/2 p-4">
-                    <img src="storage/assets/logo1.png" alt="Kepala Sekolah" class="rounded-lg shadow-lg mb-4">
-                    <p class="text-gray-600 mb-4">Kepala Sekolah SMK Negeri Makassar adalah seorang pemimpin yang berdedikasi untuk mencetak penerus bangsa yang berkualitas.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Baca Selengkapnya</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Section: Jurusan -->
-    <section class="bg-white py-12">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Jurusan di SMK Negeri Makassar</h2>
-            <p class="text-gray-600 mb-8">Pilihan program keahlian di SMK Negeri Makassar</p>
-            <div class="flex flex-wrap justify-center">
-                <div class="w-full md:w-1/4 p-4">
-                    <div class="bg-blue-500 p-6 rounded-lg shadow-lg text-white">
-                        <i class="fas fa-network-wired text-4xl mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Teknik Komputer dan Jaringan</h3>
-                        <p class="text-white">Deskripsi singkat tentang jurusan ini.</p>
+    <section class="bg-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">BOOKLET</h2>
+                <p class="text-gray-600 mb-8">Buku Pengantar Pendaftaran Event BEM Unsoed 2024</p>
+                <div class="flex flex-wrap justify-center">
+                    <div class="w-full md:w-1/4 p-4">
+                        <a href="https://drive.google.com/file/d/1lyPi144JWCcpsBk-NIlvk_hsSCXWKj-t/view?usp=drive_link" class="block bg-blue-500 p-6 rounded-lg shadow-lg text-white">
+                            <img src="storage/assets/descit.png" alt="Desa Cita" class="mb-4 rounded">
+                            <h3 class="text-xl font-bold mb-2">Desa Cita</h3>
+                        </a>
                     </div>
-                </div>
-                <div class="w-full md:w-1/4 p-4">
-                    <div class="bg-blue-500 p-6 rounded-lg shadow-lg text-white">
-                        <i class="fas fa-stethoscope text-4xl mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Perhotelan</h3>
-                        <p class="text-white">Deskripsi singkat tentang jurusan ini.</p>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/4 p-4">
-                    <div class="bg-blue-500 p-6 rounded-lg shadow-lg text-white">
-                        <i class="fas fa-robot text-4xl mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Teknik Elektronika Industri</h3>
-                        <p class="text-white">Deskripsi singkat tentang jurusan ini.</p>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/4 p-4">
-                    <div class="bg-blue-500 p-6 rounded-lg shadow-lg text-white">
-                        <i class="fas fa-paint-brush text-4xl mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Multimedia</h3>
-                        <p class="text-white">Deskripsi singkat tentang jurusan ini.</p>
+                    <div class="w-full md:w-1/4 p-4">
+                        <a href="https://drive.google.com/file/d/1lyPi144JWCcpsBk-NIlvk_hsSCXWKj-t/view?usp=drive_link" class="block bg-blue-500 p-6 rounded-lg shadow-lg text-white">
+                            <img src="storage/assets/panggih.png" alt="Perhotelan" class="mb-4 rounded">
+                            <h3 class="text-xl font-bold mb-2">Panggih Sedulur</h3>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     <Foot/>
 </template>
 
