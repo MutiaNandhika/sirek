@@ -187,14 +187,38 @@ function submit() {
   formData.append('filecv', form.filecv)
   formData.append('fileloc', form.fileloc)
   formData.append('event_id', form.event_id)
-
-  if (props.formtype === 'edit') {
+  if (props.formtype === 'edit' && form.filecv ===null && form.fileloc ===null) {
     formData.append('_method', 'PUT')
+    router.post(formAction, formData)
+  } else {
+    formData.append('filecv', form.filecv)
+    formData.append('filecv', form.fileloc)
+      if(props.formtype === 'edit'){
+        formData.append('_method', 'PUT')
+      }
+      router.post(formAction, formData)
+    }
   }
 
-  router.post(formAction, formData)
-}
 
+
+if(props.formtype === 'edit' && props.pendaftar && props.event) {
+  form.nama = props.pendaftar.nama
+  form.nama = props.pendaftar.nama;
+  form.email = props.pendaftar.email;
+  form.telpon = props.pendaftar.telpon;
+  form.alamat = props.pendaftar.alamat;
+  form.tgllahir = props.pendaftar.tgllahir;
+  form.jeniskelamin = props.pendaftar.jeniskelamin;
+  form.nim = props.pendaftar.nim;
+  form.jurusan = props.pendaftar.jurusan;
+  form.fakultas = props.pendaftar.fakultas;
+  form.angkatan = props.pendaftar.angkatan;
+  form.pilihan1 = props.pendaftar.pilihan1;
+  form.alasan1 = props.pendaftar.alasan1;
+  form.pilihan2 = props.pendaftar.pilihan2;
+  form.alasan2 = props.pendaftar.alasan2;
+}
 function handleFileUpload(field, event) {
   if (field === 'filecv') {
     form.filecv = event.target.files[0]

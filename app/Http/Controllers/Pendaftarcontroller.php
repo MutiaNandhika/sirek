@@ -31,11 +31,12 @@ class PendaftarController extends Controller
         ]);
     }
 
-    public function edit($id)
+    public function edit($event_id,$pendaftar_id)
     {
-        $pendaftar = Pendaftar::findOrFail($id);
+        $pendaftar = Pendaftar::findOrFail($pendaftar_id);
         $formtype = 'edit';
-        return Inertia::render('PendaftarForm', ['pendaftar' => $pendaftar, 'formtype' => $formtype]);
+        $event = Event::findOrFail($event_id);
+        return Inertia::render('PendaftarForm', ['pendaftar' => $pendaftar, 'formtype' => $formtype, 'event' => $event]);
     }
 
     public function update(Request $request, $id)

@@ -64,7 +64,7 @@ Route::get('/pendaftar', [PendaftarController::class, 'index'])
     ->middleware('auth');
 Route::post('/pendaftar', [PendaftarController::class, 'store'])->name('pendaftar.store');;
 Route::get('/pendaftar/create/{event_id}', [PendaftarController::class, 'create'])->name('pendaftar.create');
-Route::get('/pendaftar/edit/{id}', [PendaftarController::class, 'edit'])->name('pendaftar.edit')->middleware('auth');
+Route::get('/pendaftar/edit/{event_id}/{pendaftar_id}', [PendaftarController::class, 'edit'])->name('pendaftar.edit')->middleware('auth');
 Route::put('/editpendaftar/{id}', [PendaftarController::class, 'update'])->name('pendaftar.update')->middleware('auth');
 Route::get('/delpendaftar/{id}', [PendaftarController::class, 'delete'])->name('pendaftar.delete')->middleware('auth');
 Route::get('/detailpendaftar/{id}', [PendaftarController::class, 'detail'])->name('pendaftar.detail');
