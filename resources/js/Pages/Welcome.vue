@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import GuestNavbar from '@/Components/GuestNavbar.vue';
+import Foot from '@/Components/Foot.vue';
 
 defineProps({
     canLogin: Boolean,
@@ -13,6 +14,7 @@ defineProps({
     
     <!-- Guest Navbar -->
     <GuestNavbar :canLogin="canLogin" :canRegister="canRegister" />
+   
 
     <!-- Login/Logout Links -->
     <div v-if="canLogin" class="sm:absolute sm:top-0 sm:end-0 p-6 text-end z-10">
@@ -150,4 +152,6 @@ defineProps({
             </div>
         </div>
     </section>
+    <Foot/>
 </template>
+
