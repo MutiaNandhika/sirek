@@ -12,6 +12,11 @@ console.log(event);  // Log the props to verify data
   <div>
     <GuestNavbar />
     <div class="flex flex-col space-y-6">
+      <div v-if="flashMessage" class="container mx-auto px-4 mt-4">
+        <div class="bg-green-100 text-green-700 p-4 rounded shadow">
+          {{ flashMessage }}
+        </div>
+      </div>
       <!-- Menampilkan informasi tentang setiap acara -->
       <section>
         <header class="bg-blue-700 text-white py-12">

@@ -32,11 +32,22 @@ class PengumumanController extends Controller
     }
     
     
-    
-    public function guest(){
+    public function guest()
+    {
         $pengumuman = Pengumuman::with('event')->get();
-        return Inertia::render('GuestPengumuman',['pengumuman' => $pengumuman]);
+        $event = Event::all();
+        
+        // Create a map of events with announcements for easy lookup
+        $eventWithAnnouncements = $pengumuman->pluck('event_id')->all();
+        
+        return Inertia::render('GuestPengumuman', [
+            'pengumuman' => $pengumuman,
+            'event' => $event,
+            'eventWithAnnouncements' => $eventWithAnnouncements,
+        ]);
     }
+    
+    
     public function index()
     {
         $pengumuman = Pengumuman::with('event')->get(); // Fetch the data as a collection

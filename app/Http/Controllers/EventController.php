@@ -12,9 +12,10 @@ class EventController extends Controller
 {
     public function guest(){
         $event = Event::all();
-        return Inertia::render('GuestEvent', ['event' => $event]);
+        return Inertia::render('GuestEvent', ['event' => $event,'flash' => session('success')
+    ]
+    );
     }
-
     public function index(){
         $event = Event::all();
         return Inertia::render('Event', ['event' => $event]);

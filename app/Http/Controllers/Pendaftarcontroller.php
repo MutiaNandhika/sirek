@@ -102,8 +102,8 @@ class PendaftarController extends Controller
         }
 
         Pendaftar::create($validatedData);
-
-        return redirect()->route('pendaftar.index')->with('success', 'Pendaftar successfully created!');
+        echo '<script>alert(Pendaftaran Berhasil Dilakukan)</script>';
+        return redirect()->route('event.guest')->with('success', 'Pendaftar successfully created!');
     }
 
     public function delete($id)
