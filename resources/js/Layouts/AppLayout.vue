@@ -37,38 +37,51 @@ const logout = () => {
             </div>
             <nav>
                 <ul>
-                    <li class="mb-4">
-                        <a href="/dashboard" class="flex items-center p-3 rounded-lg bg-blue-100 text-blue-900">
-                            <i class="fas fa-home mr-3"></i>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="/event" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-blue-900">
-                            <i class="fas fa-calendar-alt mr-3"></i>
-                            Event
-                        </a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="/pendaftar" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-blue-900">
-                            <i class="fas fa-user mr-3"></i>
-                            Pendaftar
-                        </a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="/pengumuman" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-blue-900">
-                            <i class="fas fa-bullhorn mr-3"></i>
-                            Pengumuman
-                        </a>
-                    </li>
-                    <!-- Logout Link -->
-                    <li class="mb-4">
-                        <a @click="logout" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-blue-900 cursor-pointer">
-                            <i class="fas fa-sign-out-alt mr-3"></i>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
+    <li class="mb-4">
+        <NavLink 
+            :href="route('dashboard')" 
+            class="flex items-center p-2 rounded-lg text-gray-700" 
+            :active="route().current('dashboard')"
+        >
+            <i class="fas fa-home-alt mr-3"></i> Dashboard
+        </NavLink>
+    </li>
+    <li class="mb-4">
+        <NavLink 
+            :href="route('event.index')" 
+            class="flex items-center p-2 rounded-lg text-gray-700 " 
+            :active="route().current('event.index')"
+        >
+            <i class="fas fa-calendar-alt mr-3"></i> Event
+        </NavLink>
+    </li>
+    <li class="mb-4">
+        <NavLink 
+            :href="route('pendaftar.index')" 
+            class="flex items-center p-2 rounded-lg text-gray-700 " 
+            :active="route().current('pendaftar.index')"
+        >
+            <i class="fas fa-user-alt mr-3"></i> Pendaftar
+        </NavLink>
+    </li>
+    <li class="mb-4">
+        <NavLink 
+            :href="route('pengumuman.index')" 
+            class="flex items-center p-2 rounded-lg text-gray-700" 
+            :active="route().current('pengumuman.index')"
+        >
+            <i class="fas fa-bullhorn mr-3"></i> Pengumuman
+        </NavLink>
+    </li>
+    <!-- Logout Link -->
+    <li class="mb-4">
+            <a @click="logout" class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-blue-900 cursor-pointer">
+              <i class="fas fa-sign-out-alt mr-3"></i>
+              Logout
+            </a>
+          </li>
+</ul>
+
             </nav>
         </div>
 

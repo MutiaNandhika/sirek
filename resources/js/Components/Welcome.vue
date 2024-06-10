@@ -3,10 +3,10 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 </script>
 
 <template>
-    <div class="grid grid-cols-2 gap-6">
+    <div class="grid grid-cols-2 gap-6 px-6 py-6">
       <!-- Bagian kiri (Logo BEM dan judul) -->
       <div class="flex flex-col justify-center items-center col-span-1">
-        <h1 class="text-3xl font-bold mb-4">Sistem Open Recruitment</h1>
+        <h1 class="text-3xl text-center font-bold mb-4">Sistem Open Recruitment</h1>
         <!-- Ganti 'path_ke_gambar' dengan path gambar logo BEM -->
         <img src="https://pbs.twimg.com/profile_images/1775455225014607872/uy6WUXI3_400x400.jpg" alt="Logo BEM" class="h-auto max-h-40 w-auto max-w-full">
         <h1 class="text-3xl text-center font-bold mb-4">BEM Universitas Jenderal Soedirman</h1>
