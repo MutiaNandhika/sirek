@@ -22,7 +22,7 @@ defineProps({
             Dashboard
         </Link>
 
-        <div class="flex-shrink-0">
+        <div v-else class="flex-shrink-0">
             <a href="/login" class="bg-white text-blue-700 py-2 px-4 rounded-full shadow hover:bg-gray-100">Masuk</a>
         </div>
     </div>
@@ -122,4 +122,3 @@ defineProps({
         </section>
     <Foot/>
 </template>
-
