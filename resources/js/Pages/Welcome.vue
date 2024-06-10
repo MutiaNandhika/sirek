@@ -41,8 +41,8 @@ defineProps({
             <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-9 flex items-center">
                 <img src="storage/assets/nobg1.png" alt="Gambar Logo" class="w-40 h-40 mr-6">
                 <div>
-                    <h1 class="text-4xl font-bold text-gray-800">Kabinet Bahtera Karsa</h1>
-                    <p class="mt-4 text-gray-600">
+                    <h1 class="text-4xl text-left font-bold text-gray-800">Kabinet Bahtera Karsa</h1>
+                    <p class="mt-4 text-left text-gray-600">
                         BEM Unsoed 2024 mengusung nama kabinet “Bahtera Karsa” dengan arti kapal/wadah yang besar di dalamnya terdapat orang-orang yang memiliki karsa/tekad yang sama. Bersama nama dan logo ini terdapat doa serta harapan yang mengiringi setiap perjalanan BEM Unsoed di tahun 2024. Dengan ini, perjalanan BEM Unsoed 2024 kita awali bersama. Sudah saatnya kita untuk saling berkolaborasi bersama untuk terus menciptakan ragam karya untuk Unsoed dan Negeri kita tercinta. Ciptakan bahtera, Satukan karsa, Melangkah bersama!
                     </p>
                 </div>

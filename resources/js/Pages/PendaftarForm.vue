@@ -1,6 +1,6 @@
 <template>
   <form :action="formAction" method="POST" enctype="multipart/form-data" class="max-w-xl mx-auto p-4 bg-white shadow-md rounded-md" @submit.prevent="submit">
-    <h1 class="text-xl font-semibold mb-4">Tambah Pendaftar Baru</h1>
+    <h1 class="text-xl font-semibold mb-4">Pendaftaran Panitia <br>  <span class="text-blue-800">{{ event.nama_event }}</span> </h1>
     
     <div class="mb-4">
       <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
@@ -54,10 +54,10 @@ import { onMounted } from 'vue'
 const props = defineProps({
   formtype: String,
   pendaftar: Object,
-  event_id: String,
+  event: Object,
 })
 onMounted(() => {
-  console.log(props.event_id)
+  console.log(props.event)
 });
 const form = reactive({
   nama: '',

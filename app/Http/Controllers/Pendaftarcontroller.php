@@ -19,8 +19,9 @@ class PendaftarController extends Controller
 
     public function create($event_id)
     {
+        $event = Event::findOrFail($event_id);
         $formtype = 'create';
-        return Inertia::render('PendaftarForm', ['formtype' => $formtype, 'event_id'=>$event_id]);
+        return Inertia::render('PendaftarForm', ['formtype' => $formtype, 'event'=>$event]);
     }
     public function detail($id)
 {
