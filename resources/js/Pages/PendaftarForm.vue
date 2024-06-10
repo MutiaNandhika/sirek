@@ -67,9 +67,22 @@
 
     <!-- Pilihan 1 -->
     <div class="mb-4">
-      <label for="pilihan1" class="block text-sm font-medium text-gray-700">Pilihan 1</label>
-      <input id="pilihan1" v-model="form.pilihan1" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-    </div>
+      <label for="pilihan2" class="block text-sm font-medium text-gray-700">Pilihan 2</label>
+      <select id="pilihan1" v-model="form.pilihan1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+        <option value="">Pilihan Divisi</option>
+        <option value="Sekretaris">Sekretaris</option>
+        <option value="Bendahara">Bendahara</option>
+        <option value="Acara">Acara</option>
+        <option value="Kurikulum">Kurikulum</option>
+        <option value="Humpub">Humpub</option>
+        <option value="PDD">PDD</option>
+        <option value="ATP">ATP</option>
+        <option value="Lapangan">Lapangan</option>
+        <option value="Sponsorship">Sponsorship</option>
+        <option value="Usda">Usda</option>
+        <option value="Pendamping">Pendamping</option>
+      </select>
+      </div>
 
     <!-- Alasan Pilihan 1 -->
     <div class="mb-4">
@@ -80,8 +93,22 @@
     <!-- Pilihan 2 -->
     <div class="mb-4">
       <label for="pilihan2" class="block text-sm font-medium text-gray-700">Pilihan 2</label>
-      <input id="pilihan2" v-model="form.pilihan2" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-    </div>
+      <select id="pilihan2" v-model="form.pilihan2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+        <option value="">Pilihan Divisi</option>
+        <option value="Sekretaris">Sekretaris</option>
+        <option value="Bendahara">Bendahara</option>
+        <option value="Acara">Acara</option>
+        <option value="Kurikulum">Kurikulum</option>
+        <option value="Humpub">Humpub</option>
+        <option value="PDD">PDD</option>
+        <option value="ATP">ATP</option>
+        <option value="Lapangan">Lapangan</option>
+        <option value="Sponsorship">Sponsorship</option>
+        <option value="Usda">Usda</option>
+        <option value="Pendamping">Pendamping</option>
+      </select>
+      </div>
+
 
     <!-- Alasan Pilihan 2 -->
     <div class="mb-4">

@@ -74,6 +74,14 @@
               <p class="text-sm font-medium text-gray-500">Alasan 2:</p>
               <p class="text-md font-semibold">{{ pendaftar.alasan2 }}</p>
             </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">File CV:</p>
+              <p class="text-md font-semibold">{{ pendaftar.filecv }}</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">File LOC:</p>
+              <p class="text-md font-semibold">{{ pendaftar.fileloc }}</p>
+            </div>
           </div>
         
         </div>
