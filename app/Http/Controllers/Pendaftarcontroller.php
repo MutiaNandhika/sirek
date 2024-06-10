@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,7 +15,6 @@ class PendaftarController extends Controller
             'pendaftar' => $pendaftar,
         ]);
     }
-    
 
     public function create($event_id)
     {
@@ -23,18 +22,22 @@ class PendaftarController extends Controller
         $formtype = 'create';
         return Inertia::render('PendaftarForm', ['formtype' => $formtype, 'event'=>$event]);
     }
+
     public function detail($id)
-{
-    $pendaftar = Pendaftar::findOrFail($id);
-    return Inertia::render('DetailPendaftar', [
-        'pendaftar' => $pendaftar,
-    ]);
-}
-public function edit($id){
-    $event = Pendaftar::findOrFail($id);
-    $formtype = 'edit';
-    return Inertia::render('PendaftarForm', ['event' => $event, 'formtype' => $formtype]);
-}
+    {
+        $pendaftar = Pendaftar::findOrFail($id);
+        return Inertia::render('DetailPendaftar', [
+            'pendaftar' => $pendaftar,
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $pendaftar = Pendaftar::findOrFail($id);
+        $formtype = 'edit';
+        return Inertia::render('PendaftarForm', ['pendaftar' => $pendaftar, 'formtype' => $formtype]);
+    }
+
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -52,9 +55,9 @@ public function edit($id){
             'alasan1' => 'required|string',
             'pilihan2' => 'required|string|max:100',
             'alasan2' => 'required|string',
-            'filecv' => 'required|string|max:100', // Nullable for updates
-            'fileloc' => 'required|string|max:100', // Nullable for updates
-            'event_id'=>'required|string|max:100', // Nullable for updates
+            'filecv' => 'nullable|string|max:100', // Nullable for updates
+            'fileloc' => 'nullable|string|max:100', // Nullable for updates
+            'event_id' => 'required|integer', // Ensure the correct type for event_id
         ]);
 
         $pendaftar = Pendaftar::findOrFail($id);
@@ -64,11 +67,10 @@ public function edit($id){
 
         return redirect()->route('pendaftar.index')->with('success', 'Pendaftar successfully updated!');
     }
-    
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'pendaftar_id' => 'required|integer',
             'nama' => 'required|string|max:100',
             'email' => 'required|string|email|max:100',
             'telpon' => 'required|string|max:15',
@@ -83,10 +85,21 @@ public function edit($id){
             'alasan1' => 'required|string',
             'pilihan2' => 'required|string|max:100',
             'alasan2' => 'required|string',
-            'filecv' => 'required|string|max:100',
-            'fileloc' => 'required|string|max:100',
-            'event_id' => 'required|string|max:100',
+            'filecv' => 'required|file|mimes:pdf,doc,docx|max:2048',
+            'fileloc' => 'required|file|mimes:pdf,doc,docx|max:2048',
+            'event_id' => 'required|integer', // Ensure the correct type for event_id
         ]);
+
+        // Handle file upload
+        if ($request->hasFile('filecv')) {
+            $filecvPath = $request->file('filecv')->store('cv_files');
+            $validatedData['filecv'] = $filecvPath;
+        }
+
+        if ($request->hasFile('fileloc')) {
+            $filelocPath = $request->file('fileloc')->store('loc_files');
+            $validatedData['fileloc'] = $filelocPath;
+        }
 
         Pendaftar::create($validatedData);
 
