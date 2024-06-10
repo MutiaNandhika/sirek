@@ -13,7 +13,6 @@ defineProps({
     
     <!-- Guest Navbar -->
     <GuestNavbar :canLogin="canLogin" :canRegister="canRegister" />
-
     <!-- Login/Logout Links -->
     <div v-if="canLogin" class="sm:absolute sm:top-0 sm:end-0 p-6 text-end z-10">
         <Link v-if="$page.props.auth?.user" :href="route('dashboard')"
@@ -25,7 +24,6 @@ defineProps({
             Log in
         </Link>
     </div>
-    
     <!-- Main Content -->
     <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-center selection:bg-red-500 selection:text-white">
     </div>
