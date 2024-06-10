@@ -184,22 +184,27 @@ function submit() {
   formData.append('alasan1', form.alasan1)
   formData.append('pilihan2', form.pilihan2)
   formData.append('alasan2', form.alasan2)
-  formData.append('filecv', form.filecv)
-  formData.append('fileloc', form.fileloc)
   formData.append('event_id', form.event_id)
-  if (props.formtype === 'edit' && (form.filecv === null || form.fileloc === null)) {
-    formData.append('_method', 'PUT');
-    router.put(formAction, formData); // Use router.put for the PUT method
-} else {
-    formData.append('filecv', form.filecv);
-    formData.append('fileloc', form.fileloc); // Append both filecv and fileloc
-    if (props.formtype === 'edit') {
-        formData.append('_method', 'PUT');
-    }
-    router.post(formAction, formData); // Use router.post for the POST method
+  
+  // Append files if they are not null
+  if (form.filecv !== null) {
+    formData.append('filecv', form.filecv)
+  }
+  if (form.fileloc !== null) {
+    formData.append('fileloc', form.fileloc)
+  }
+
+  // Determine the HTTP method based on the form type
+  let method = 'POST'
+  if (props.formtype === 'edit') {
+    method = 'PUT'
+    formData.append('_method', 'PUT')
+  }
+
+  // Submit the form using appropriate router method
+  router[method.toLowerCase()](formAction, formData)
 }
 
-  }
 
 
 
