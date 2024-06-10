@@ -2,7 +2,7 @@
     <nav class="bg-blue-800 backdrop-blur-lg p-3 flex justify-between items-center shadow-lg">
         <!-- Logo -->
         <div class="flex-shrink-0">
-            <img src="storage/assets/Screenshot 2024-06-06 214106.png" alt="Logo" class="h-15 w-32"> <!-- Ukuran disesuaikan dengan Tailwind CSS -->
+            <img src="storage/assets/logo1.png" alt="Logo" class="h-15 w-32"> <!-- Ukuran disesuaikan dengan Tailwind CSS -->
         </div>
 
         <!-- Navigation Links -->
