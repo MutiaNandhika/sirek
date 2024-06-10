@@ -77,9 +77,9 @@ const uniqueEvents = computed(() => {
     <a :href="'/detailpendaftar/' + item.pendaftar_id" class="text-blue-500 hover:text-blue-700">
         <i class="fa-solid fa-eye"></i> 
     </a>
-    <a :href="'/editpendaftar/' + item.pendaftar_id" class="text-gray-500 hover:text-gray-700">
+    <!-- <a :href="'/editpendaftar/' + item.pendaftar_id" class="text-gray-500 hover:text-gray-700">
         <i class="fas fa-edit"></i> 
-    </a>
+    </a> -->
     <a :href="'/delpendaftar/' + item.pendaftar_id" onclick="return confirm('Apakah Anda yakin ingin menghapus pendaftar ini?')" class="text-red-500 hover:text-red-700">
         <i class="fas fa-trash-alt"></i> 
     </a>
