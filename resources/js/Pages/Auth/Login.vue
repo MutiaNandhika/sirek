@@ -1,17 +1,6 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
-import AuthenticationCard from '@/Components/AuthenticationCard.vue';
-import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
-import Checkbox from '@/Components/Checkbox.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-
-defineProps({
-    canResetPassword: Boolean,
-    status: String,
-});
+import { ref } from 'vue';
 
 const form = useForm({
     email: '',
@@ -32,59 +21,69 @@ const submit = () => {
 <template>
     <Head title="Log in" />
 
-    <AuthenticationCard>
-        <template #logo>
-            <AuthenticationCardLogo />
-        </template>
+    <div class="min-h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image: url('/path/to/your/background-image.jpg');">
+        <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
+        <div class="relative z-10 w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+            <div class="text-center mb-6">
+                <img src="storage/assets/logoitem.png" alt="BahteraKarsa" class="mx-auto h-12 w-auto">
+                <h2 class="mt-6 text-3xl font-extrabold text-gray-900">Selamat Datang</h2>
+                <p class="mt-2 text-xs text-gray-600">
+                    Silakan masukkan kredensial Anda untuk akses ke kontrol
+                </p>
+            </div>
 
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
+            <form @submit.prevent="submit">
+                <div class="mb-4">
+                    <div class="flex items-center border border-gray-300 rounded-md">
+                        <span class="inline-flex items-center px-3 text-gray-500">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <input 
+                            id="email" 
+                            v-model="form.email" 
+                            type="email" 
+                            placeholder="Masukan email"
+                            class="form-input flex-1 block w-full border-none focus:ring-0"
+                            required 
+                            autofocus 
+                            autocomplete="email"
+                        />
+                    </div>
+                    <InputError class="mt-2" :message="form.errors.email" />
+                </div>
+
+                <div class="mb-4">
+                    <div class="flex items-center border border-gray-300 rounded-md">
+                        <span class="inline-flex items-center px-3 text-gray-500">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                        <input 
+                            id="password" 
+                            v-model="form.password" 
+                            type="password" 
+                            placeholder="Masukan Password"
+                            class="form-input flex-1 block w-full border-none focus:ring-0"
+                            required 
+                            autocomplete="current-password"
+                        />
+                    </div>
+                    <InputError class="mt-2" :message="form.errors.password" />
+                </div>
+
+                <div class="mt-6">
+                    <button type="submit" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" :disabled="form.processing">
+                        Masuk
+                    </button>
+                </div>
+            </form>
         </div>
-
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-                <TextInput
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="current-password"
-                />
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-
-            <div class="block mt-4">
-                <label class="flex items-center">
-                    <Checkbox v-model:checked="form.remember" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">Remember me</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Forgot your password?
-                </Link>
-
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
-                </PrimaryButton>
-            </div>
-        </form>
-    </AuthenticationCard>
+    </div>
 </template>
+
+<style scoped>
+.form-input {
+    padding-left: 0.75rem; /* Adjust if needed */
+    padding-right: 0.75rem; /* Adjust if needed */
+    height: 2.5rem; /* Adjust if needed */
+}
+</style>
