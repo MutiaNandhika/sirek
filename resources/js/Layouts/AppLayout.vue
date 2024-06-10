@@ -82,7 +82,7 @@ const logout = () => {
                 <ul class="space-y-1">
                     <li>
                         <a @click="logout" class="flex items-center p-1 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-blue-900 cursor-pointer">
-                            <i class="fas fa-sign-out-alt mr-3"></i> Logout
+                            <i class="fas fa-sign-out-alt mr-3"></i> Keluar
                         </a>
                     </li>
                 </ul>
