@@ -30,7 +30,7 @@ const logout = () => {
 <template>
     <div class="flex min-h-screen">
         <!-- Sidebar -->
-        <div class="w-1/4 bg-white p-6 shadow-lg flex flex-col justify-between">
+        <div class="w-1/4 bg-white p-6 shadow-lg sticky top-0 h-screen flex flex-col justify-between">
             <div>
                 <div class="flex items-center mb-8">
                     <img src="https://pbs.twimg.com/profile_images/1775455225014607872/uy6WUXI3_400x400.jpg" alt="Logo BEM" class="h-12 w-12">
@@ -117,5 +117,12 @@ body {
 /* Adjust spacing for closer items */
 ul.space-y-1 > li {
     margin-bottom: 0.25rem;
+}
+
+/* Ensure sidebar is sticky */
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 </style>
