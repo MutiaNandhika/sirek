@@ -62,7 +62,7 @@ const uniqueEvents = computed(() => {
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jurusan</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fakultas</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Angkatan</th>
-                                    <th colspan="2" scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                    <th colspan="3" scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
@@ -73,14 +73,19 @@ const uniqueEvents = computed(() => {
                                     <td class="px-6 py-4 text-sm text-gray-500">{{ item.jurusan }}</td>
                                     <td class="px-6 py-4 text-sm text-gray-500">{{ item.fakultas }}</td>
                                     <td class="px-6 py-4 text-sm text-gray-500">{{ item.angkatan }}</td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">
-                                        <a :href="'/detailpendaftar/' + item.pendaftar_id" class="text-blue-500 hover:text-blue-700 mx-2">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </a>
-                                        <a :href="'/delpendaftar/' + item.pendaftar_id" onclick="return confirm('Apakah Anda yakin ingin menghapus pendaftar ini?')" class="text-red-500 hover:text-red-700 mx-2">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>  
+                                    <td class="px-6 py-4 text-sm text-gray-500 flex items-center justify-center space-x-2">
+    <a :href="'/detailpendaftar/' + item.pendaftar_id" class="text-blue-500 hover:text-blue-700">
+        <i class="fa-solid fa-eye"></i> 
+    </a>
+    <a :href="'/editpendaftar/' + item.pendaftar_id" class="text-gray-500 hover:text-gray-700">
+        <i class="fas fa-edit"></i> 
+    </a>
+    <a :href="'/delpendaftar/' + item.pendaftar_id" onclick="return confirm('Apakah Anda yakin ingin menghapus pendaftar ini?')" class="text-red-500 hover:text-red-700">
+        <i class="fas fa-trash-alt"></i> 
+    </a>
+</td>
+
+
                                 </tr>
                             </tbody>
                         </table>
