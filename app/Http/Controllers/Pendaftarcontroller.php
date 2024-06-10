@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use App\Models\Pendaftar;
 use App\Models\Event;
@@ -56,18 +57,34 @@ class PendaftarController extends Controller
             'alasan1' => 'required|string',
             'pilihan2' => 'required|string|max:100',
             'alasan2' => 'required|string',
-            'filecv' => 'nullable|string|max:100', // Nullable for updates
-            'fileloc' => 'nullable|string|max:100', // Nullable for updates
-            'event_id' => 'required|integer', // Ensure the correct type for event_id
+            'filecv' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'fileloc' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'event_id' => 'required|integer',
         ]);
 
         $pendaftar = Pendaftar::findOrFail($id);
 
-        // Update fields based on the submitted data
+        if ($request->hasFile('filecv')) {
+            $filecvPath = $request->file('filecv')->store('cv_files', 'public');
+            if ($pendaftar->filecv) {
+                Storage::disk('public')->delete($pendaftar->filecv);
+            }
+            $validatedData['filecv'] = $filecvPath;
+        }
+
+        if ($request->hasFile('fileloc')) {
+            $filelocPath = $request->file('fileloc')->store('loc_files', 'public');
+            if ($pendaftar->fileloc) {
+                Storage::disk('public')->delete($pendaftar->fileloc);
+            }
+            $validatedData['fileloc'] = $filelocPath;
+        }
+
         $pendaftar->update($validatedData);
 
         return redirect()->route('pendaftar.index')->with('success', 'Pendaftar successfully updated!');
     }
+
 
     public function store(Request $request)
     {
