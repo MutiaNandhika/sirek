@@ -24,6 +24,7 @@ const classes = computed(() => {
 
 <style scoped>
 .active, .hover:hover {
-    background-color: rgb(147, 190, 245);
+    background-color: rgb(25, 77, 145);
+    color:white;
 }
 </style>
