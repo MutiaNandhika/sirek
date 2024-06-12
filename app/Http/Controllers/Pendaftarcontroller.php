@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -21,7 +21,7 @@ class PendaftarController extends Controller
     {
         $event = Event::findOrFail($event_id);
         $formtype = 'create';
-        return Inertia::render('PendaftarForm', ['formtype' => $formtype, 'event'=>$event]);
+        return Inertia::render('PendaftarForm', ['formtype' => $formtype, 'event' => $event]);
     }
 
     public function detail($id)
@@ -32,7 +32,7 @@ class PendaftarController extends Controller
         ]);
     }
 
-    public function edit($event_id,$pendaftar_id)
+    public function edit($event_id, $pendaftar_id)
     {
         $pendaftar = Pendaftar::findOrFail($pendaftar_id);
         $formtype = 'edit';
@@ -82,9 +82,8 @@ class PendaftarController extends Controller
 
         $pendaftar->update($validatedData);
 
-        return redirect()->route('pendaftar.index')->with('success', 'Pendaftar successfully updated!');
+        return redirect()->route('pendaftar.index')->with('flashMessage', 'Pendaftar successfully updated!');
     }
-
 
     public function store(Request $request)
     {
@@ -105,29 +104,32 @@ class PendaftarController extends Controller
             'alasan2' => 'required|string',
             'filecv' => 'required|file|mimes:pdf,doc,docx|max:2048',
             'fileloc' => 'required|file|mimes:pdf,doc,docx|max:2048',
-            'event_id' => 'required|integer', // Ensure the correct type for event_id
+            'event_id' => 'required|integer',
         ]);
 
-        // Handle file upload
         if ($request->hasFile('filecv')) {
-            $filecvPath = $request->file('filecv')->store('cv_files');
+            $filecvPath = $request->file('filecv')->store('cv_files', 'public');
             $validatedData['filecv'] = $filecvPath;
         }
 
         if ($request->hasFile('fileloc')) {
-            $filelocPath = $request->file('fileloc')->store('loc_files');
+            $filelocPath = $request->file('fileloc')->store('loc_files', 'public');
             $validatedData['fileloc'] = $filelocPath;
         }
 
         Pendaftar::create($validatedData);
-        echo '<script>alert(Pendaftaran Berhasil Dilakukan)</script>';
-        return redirect()->route('event.guest')->with('success', 'Pendaftar successfully created!');
+        session()->flash('flashMessage', 'Pendaftar successfully created!');
+        dd(session('flashMessage')); // Add this line for debugging
+    
+        return redirect()->route('event.guest');
     }
 
     public function delete($id)
     {
         $pendaftar = Pendaftar::findOrFail($id);
         $pendaftar->delete();
-        return redirect()->route('pendaftar.index')->with('success', 'Data deleted successfully!');
+        return redirect()->route('pendaftar.index')->with('flashMessage', 'Data deleted successfully!');
     }
 }
+
+?>
