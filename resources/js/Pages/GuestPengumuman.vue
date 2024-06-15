@@ -1,4 +1,5 @@
 <script setup>
+import { Head, Link } from '@inertiajs/vue3';
 import { defineProps } from "vue";
 import GuestNavbar from "@/Components/GuestNavbar.vue";
 import Foot from "@/Components/Foot.vue";
@@ -16,6 +17,8 @@ console.log(eventWithAnnouncements);
 </script>
 
 <template>
+      <Head title="Pengumuman" />
+
   <div>
     <GuestNavbar />
     <div class="flex flex-col space-y-6">

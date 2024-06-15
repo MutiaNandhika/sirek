@@ -16,7 +16,7 @@ defineProps({
     <GuestNavbar :canLogin="canLogin" :canRegister="canRegister" />
 
     <!-- Login/Logout Links -->
-    <div v-if="canLogin" class="sm:absolute sm:top-0 sm:end-0 p-6 text-end z-10">
+    <div v-if="canLogin" class="hidden sm:block sm:absolute sm:top-0 sm:end-0 p-6 text-end z-10">
         <Link v-if="$page.props.auth?.user" :href="route('dashboard')"
               class="font-semibold text-white hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
             Dashboard
@@ -38,8 +38,8 @@ defineProps({
         <div class="relative bg-gray-100 selection:bg-red-500 selection:text-white">
         <div class="text-center p-6 sm:p-12">
             <!-- Hero Section -->
-            <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-9 flex items-center">
-                <img src="storage/assets/nobg1.png" alt="Gambar Logo" class="w-40 h-40 mr-6">
+            <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-9 flex flex-col sm:flex-row items-center">
+                <img src="storage/assets/nobg1.png" alt="Gambar Logo" class="w-40 h-40 mr-0 sm:mr-6 mb-4 sm:mb-0">
                 <div>
                     <h1 class="text-4xl text-left font-bold text-gray-800">Kabinet Bahtera Karsa</h1>
                     <p class="mt-4 text-left text-gray-600">
@@ -56,40 +56,40 @@ defineProps({
         <div class="container mx-auto p-6">
         <h1 class="text-3xl font-bold text-center mb-6">Filosofi Logo</h1>
         <div class="space-y-6">
-            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
-                <img src="storage/assets/f1.png" alt="Api" class="w-16 h-16 mr-4">
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center">
+                <img src="storage/assets/f1.png" alt="Api" class="w-16 h-16 mb-4 sm:mb-0 sm:mr-4">
                 <div>
                     <h2 class="text-xl font-bold">Api</h2>
                     <p>Melambangkan kekuatan tekad juang, yang senantiasa memberikan kehangatan serta cahaya dalam setiap langkah perjuangan, dan menjadi sumber inspirasi sekitarnya</p>
                 </div>
             </div>
             
-            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
-                <img src="storage/assets/f2.png" alt="Bahtera" class="w-16 h-16 mr-4">
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center">
+                <img src="storage/assets/f2.png" alt="Bahtera" class="w-16 h-16 mb-4 sm:mb0 sm:mr-4">
                 <div>
                     <h2 class="text-xl font-bold">Bahtera</h2>
                     <p>Sebagai kapal besar yang akan melakukan perjalanan luas, diciptakan untuk mempersatukan dan mengokohkan rasa, membangun fondasi yang kuat untuk berlabuh bersama</p>
                 </div>
             </div>
             
-            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
-                <img src="storage/assets/f3.png" alt="Tiga Percikan Air" class="w-16 h-16 mr-4">
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center">
+                <img src="storage/assets/f3.png" alt="Tiga Percikan Air" class="w-16 h-16 mb-4 sm:mb0 sm:mr-4">
                 <div>
                     <h2 class="text-xl font-bold">Tiga Percikan Air</h2>
                     <p>Melambangkan tri dharma perguruan tinggi sebagai landasan</p>
                 </div>
             </div>
             
-            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
-                <img src="storage/assets/f4.png" alt="Tangan yang mengadah" class="w-16 h-16 mr-4">
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center">
+                <img src="storage/assets/f4.png" alt="Tangan yang mengadah" class="w-16 h-16 mb-4 sm:mb0 sm:mr-4">
                 <div>
                     <h2 class="text-xl font-bold">Tangan yang mengadah</h2>
                     <p>Melambangkan keterbukaan dan semangat yang mendorong bahtera karsa</p>
                 </div>
             </div>
             
-            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
-                <img src="storage/assets/f5.png" alt="Gelombang" class="w-16 h-16 mr-4">
+            <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center">
+                <img src="storage/assets/f5.png" alt="Gelombang" class="w-16 h-16 mb-4 sm:mb0 sm:mr-4">
                 <div>
                     <h2 class="text-xl font-bold">Gelombang</h2>
                     <p>Menggambarkan pergerakan yang dinamis serta keberanian yang tulus dalam menghadapi beragam tantangan, terus melangkah bersama karsa guna mencapai tujuan bersama</p>
