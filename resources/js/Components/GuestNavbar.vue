@@ -10,7 +10,7 @@
             <ul class="flex space-x-8">
                 <li><a href="/" class="text-white hover:text-gray-400">Beranda</a></li>
                 <li><a href="/eventguest" class="text-white hover:text-gray-400">Event</a></li>
-                <li><a href="/pengumumanguest/" class="text-white hover:text-gray-400">Pengumuman</a></li>
+                <li><a href="/pengumumanguest" class="text-white hover:text-gray-400">Pengumuman</a></li>
             </ul>
         </div>
         

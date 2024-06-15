@@ -119,8 +119,6 @@ class PendaftarController extends Controller
 
         Pendaftar::create($validatedData);
         session()->flash('flashMessage', 'Pendaftar successfully created!');
-        dd(session('flashMessage')); // Add this line for debugging
-    
         return redirect()->route('event.guest');
     }
 
