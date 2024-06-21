@@ -106,13 +106,13 @@ defineProps({
                 <p class="text-gray-600 mb-8">Buku Pengantar Pendaftaran Event BEM Unsoed 2024</p>
                 <div class="flex flex-wrap justify-center">
                     <div class="w-full md:w-1/4 p-4">
-                        <a href="https://drive.google.com/file/d/1lyPi144JWCcpsBk-NIlvk_hsSCXWKj-t/view?usp=drive_link" class="block bg-blue-500 p-6 rounded-lg shadow-lg text-white">
+                        <a href="https://drive.google.com/file/d/11OSa3Gbb8Yj-y0VKRJ6o_WvOsR50fNVJ/view" class="block bg-blue-500 p-6 rounded-lg shadow-lg text-white">
                             <img src="storage/assets/descit.png" alt="Desa Cita" class="mb-4 rounded">
                             <h3 class="text-xl font-bold mb-2">Desa Cita</h3>
                         </a>
                     </div>
                     <div class="w-full md:w-1/4 p-4">
-                        <a href="https://drive.google.com/file/d/1lyPi144JWCcpsBk-NIlvk_hsSCXWKj-t/view?usp=drive_link" class="block bg-blue-500 p-6 rounded-lg shadow-lg text-white">
+                        <a href="https://drive.google.com/file/d/13LqWk_eJjhUKOyNq-qiX6LJWFdFPEHVD/view" class="block bg-blue-500 p-6 rounded-lg shadow-lg text-white">
                             <img src="storage/assets/panggih.png" alt="Perhotelan" class="mb-4 rounded">
                             <h3 class="text-xl font-bold mb-2">Panggih Sedulur</h3>
                         </a>
