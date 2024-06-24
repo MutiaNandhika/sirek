@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Log;
 use App\Models\Event;
 
 class EventController extends Controller
@@ -18,8 +18,13 @@ class EventController extends Controller
     }
     public function index(){
         $event = Event::all();
-        return Inertia::render('Event', ['event' => $event]);
+        Log::info(session()->all());  // Menambahkan logging untuk memeriksa data session
+        return Inertia::render('Event', [
+            'event' => $event,
+            'flash' => session()->all()
+        ]);
     }
+    
 
     public function create(){
         $formtype = 'create';
@@ -77,11 +82,16 @@ class EventController extends Controller
     }
     
     public function delete($id){
-        $event = Event::findOrFail($id);
-        if ($event->gambar) {
-            Storage::disk('public')->delete($event->gambar);
+        try {
+            $event = Event::findOrFail($id);
+            if ($event->gambar) {
+                Storage::disk('public')->delete($event->gambar);
+            }
+            $event->delete();
+            return redirect()->route('event.index')->with('success', 'Event deleted');
+        } catch (\Exception $e) {
+            Log::error('Error deleting event: ' . $e->getMessage());
+            return redirect()->route('event.index')->with('error', 'Failed to delete event');
         }
-        $event->delete();
-        return redirect()->route('event.index')->with('success', 'Event deleted');
     }
 }

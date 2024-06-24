@@ -14,6 +14,7 @@ class PendaftarController extends Controller
         $pendaftar = Pendaftar::with('event')->get();
         return Inertia::render('Pendaftar', [
             'pendaftar' => $pendaftar,
+            'flash' => session()->all()
         ]);
     }
 
@@ -83,7 +84,7 @@ class PendaftarController extends Controller
 
         $pendaftar->update($validatedData);
 
-        return redirect()->route('pendaftar.index')->with('flashMessage', 'Pendaftar successfully updated!');
+        return redirect()->route('pendaftar.index')->with('success', 'Pendaftar successfully updated!');
     }
 
     public function store(Request $request)
@@ -119,7 +120,7 @@ class PendaftarController extends Controller
         }
 
         Pendaftar::create($validatedData);
-        session()->flash('flashMessage', 'Pendaftar successfully created!');
+        session()->flash('success', 'Pendaftar successfully created!');
         return redirect()->route('event.guest');
     }
 
@@ -127,7 +128,7 @@ class PendaftarController extends Controller
     {
         $pendaftar = Pendaftar::findOrFail($id);
         $pendaftar->delete();
-        return redirect()->route('pendaftar.index')->with('flashMessage', 'Data deleted successfully!');
+        return redirect()->route('pendaftar.index')->with('success', 'Data deleted successfully!');
     }
 }
 

@@ -1,6 +1,9 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-const props = defineProps({ event: Array });
+const props = defineProps({ event: Array, 
+    flash : Object
+});
+console.log(props.flash);
 console.log(props.event);  // Log the props to verify data
 </script>
 
@@ -13,6 +16,13 @@ console.log(props.event);  // Log the props to verify data
         </template>
 
         <div class="py-12">
+   <!-- Notifikasi -->
+   <div v-if="$page.props.flash && $page.props.flash.success" class="alert alert-success">
+      {{ $page.props.flash.success }}
+    </div>
+    <div v-if="$page.props.flash && $page.props.flash.error" class="alert alert-danger">
+      {{ $page.props.flash.error }}
+    </div>
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="overflow-x-auto">
@@ -56,3 +66,20 @@ console.log(props.event);  // Log the props to verify data
         </div>
     </AppLayout>
 </template>
+<style>
+/* Tambahkan styling untuk notifikasi jika diperlukan */
+.alert {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+</style>
