@@ -67,7 +67,7 @@
 
     <!-- Pilihan 1 -->
     <div class="mb-4">
-      <label for="pilihan2" class="block text-sm font-medium text-gray-700">Pilihan 1</label>
+      <label for="pilihan1" class="block text-sm font-medium text-gray-700">Pilihan 1</label>
       <select id="pilihan1" v-model="form.pilihan1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
         <option value="">Pilihan Divisi</option>
         <option value="Sekretaris">Sekretaris</option>
@@ -82,7 +82,7 @@
         <option value="Usda">Usda</option>
         <option value="Pendamping">Pendamping</option>
       </select>
-      </div>
+    </div>
 
     <!-- Alasan Pilihan 1 -->
     <div class="mb-4">
@@ -107,8 +107,7 @@
         <option value="Usda">Usda</option>
         <option value="Pendamping">Pendamping</option>
       </select>
-      </div>
-
+    </div>
 
     <!-- Alasan Pilihan 2 -->
     <div class="mb-4">
@@ -165,10 +164,10 @@ const form = reactive({
   fileloc: null,
   event_id: (props.event.event_id),
 })
-console.log(form);
+
 const formAction = props.formtype === 'create' ? '/pendaftar' : `/editpendaftar/${props.pendaftar.pendaftar_id}`
 
-function submit() {
+async function submit() {
   const formData = new FormData()
   formData.append('nama', form.nama)
   formData.append('email', form.email)
@@ -186,40 +185,48 @@ function submit() {
   formData.append('alasan2', form.alasan2)
   formData.append('event_id', form.event_id)
 
-  if (props.formtype === 'edit' && form.filecv === null || form.fileloc === null) {
+  if (props.formtype === 'edit' && (form.filecv === null || form.fileloc === null)) {
     formData.append('_method', 'PUT')
-    router.post(formAction, formData)
+    try {
+      await router.post(formAction, formData)
+      alert("Terimakasih anda telah mendaftar")
+      router.push('/eventguest')
+    } catch (error) {
+      console.error('Error submitting form:', error)
+    }
   } else {
     formData.append('filecv', form.filecv)
     formData.append('fileloc', form.fileloc)
     if (props.formtype === 'edit') {
       formData.append('_method', 'PUT')
     }
-    router.post(formAction, formData)
+    try {
+      await router.post(formAction, formData)
+      alert("Terimakasih anda telah mendaftar")
+      router.push('/eventguest')
+    } catch (error) {
+      console.error('Error submitting form:', error)
+    }
   }
 }
 
-
-
-
-
-if(props.formtype === 'edit' && props.pendaftar && props.event) {
+if (props.formtype === 'edit' && props.pendaftar && props.event) {
   form.nama = props.pendaftar.nama
-  form.nama = props.pendaftar.nama;
-  form.email = props.pendaftar.email;
-  form.telpon = props.pendaftar.telpon;
-  form.alamat = props.pendaftar.alamat;
-  form.tgllahir = props.pendaftar.tgllahir;
-  form.jeniskelamin = props.pendaftar.jeniskelamin;
-  form.nim = props.pendaftar.nim;
-  form.jurusan = props.pendaftar.jurusan;
-  form.fakultas = props.pendaftar.fakultas;
-  form.angkatan = props.pendaftar.angkatan;
-  form.pilihan1 = props.pendaftar.pilihan1;
-  form.alasan1 = props.pendaftar.alasan1;
-  form.pilihan2 = props.pendaftar.pilihan2;
-  form.alasan2 = props.pendaftar.alasan2;
+  form.email = props.pendaftar.email
+  form.telpon = props.pendaftar.telpon
+  form.alamat = props.pendaftar.alamat
+  form.tgllahir = props.pendaftar.tgllahir
+  form.jeniskelamin = props.pendaftar.jeniskelamin
+  form.nim = props.pendaftar.nim
+  form.jurusan = props.pendaftar.jurusan
+  form.fakultas = props.pendaftar.fakultas
+  form.angkatan = props.pendaftar.angkatan
+  form.pilihan1 = props.pendaftar.pilihan1
+  form.alasan1 = props.pendaftar.alasan1
+  form.pilihan2 = props.pendaftar.pilihan2
+  form.alasan2 = props.pendaftar.alasan2
 }
+
 function handleFileUpload(field, event) {
   if (field === 'filecv') {
     form.filecv = event.target.files[0]
