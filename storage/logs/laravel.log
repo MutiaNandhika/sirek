@@ -3334,3 +3334,46 @@
   'login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d' => 1,
   'password_hash_sanctum' => '$2y$12$KD18cUqOiZhI9xit0oyYQOG/mNP7P2h1VgNf57elC8nkkRUaY7RHO',
 )  
+[2024-07-02 09:22:26] local.INFO: array (
+  '_token' => 'VPrc5FRUnX0TxlsuCfZl2EhIJjmx6XgLsQNBzpRI',
+  'url' => 
+  array (
+  ),
+  '_previous' => 
+  array (
+    'url' => 'http://sirek.test/login',
+  ),
+  '_flash' => 
+  array (
+    'old' => 
+    array (
+    ),
+    'new' => 
+    array (
+    ),
+  ),
+  'login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d' => 1,
+)  
+[2024-07-02 09:23:10] local.INFO: array (
+  '_token' => 'VPrc5FRUnX0TxlsuCfZl2EhIJjmx6XgLsQNBzpRI',
+  'url' => 
+  array (
+  ),
+  '_previous' => 
+  array (
+    'url' => 'http://sirek.test/event/create',
+  ),
+  '_flash' => 
+  array (
+    'old' => 
+    array (
+      0 => 'success',
+    ),
+    'new' => 
+    array (
+    ),
+  ),
+  'login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d' => 1,
+  'password_hash_sanctum' => '$2y$12$KD18cUqOiZhI9xit0oyYQOG/mNP7P2h1VgNf57elC8nkkRUaY7RHO',
+  'success' => 'Event Inserted Successfully',
+)  
