@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -18,7 +19,6 @@ class PendaftarController extends Controller
         ]);
     }
 
-    
     public function create($event_id)
     {
         $event = Event::findOrFail($event_id);
@@ -120,7 +120,7 @@ class PendaftarController extends Controller
         }
 
         Pendaftar::create($validatedData);
-        session()->flash('success', 'Pendaftar successfully created!');
+        session()->flash('success', 'Selamat kamu berhasil mendaftar! Silahkan menunggu hingga hasil pengumuman dirilis');
         return redirect()->route('event.guest');
     }
 
@@ -131,5 +131,3 @@ class PendaftarController extends Controller
         return redirect()->route('pendaftar.index')->with('success', 'Data deleted successfully!');
     }
 }
-
-?>
