@@ -189,7 +189,6 @@ async function submit() {
     formData.append('_method', 'PUT')
     try {
       await router.post(formAction, formData)
-      alert("Terimakasih anda telah mendaftar")
       router.push('/eventguest')
     } catch (error) {
       console.error('Error submitting form:', error)
@@ -202,7 +201,6 @@ async function submit() {
     }
     try {
       await router.post(formAction, formData)
-      alert("Terimakasih anda telah mendaftar")
       router.push('/eventguest')
     } catch (error) {
       console.error('Error submitting form:', error)
